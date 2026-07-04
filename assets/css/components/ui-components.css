@@ -1,0 +1,407 @@
+/* ==========================================================================
+   Shared UI components used across inner pages.
+   Each block maps to a future TYPO3 Fluid partial / content element:
+     - .gnfa-tabs        -> Tabs.html
+     - .doc-list         -> DocumentList.html
+     - .gnfa-accordion   -> Accordion.html (glosario / FAQ)
+     - .alpha-nav        -> AlphabetNav.html
+     - .link-card        -> LinkCard.html
+     - .canales-card     -> CommunicationChannels.html
+     - .sidebar-promo    -> SidebarPromo.html
+   ========================================================================== */
+
+/* ---- Generic inner-page section wrapper ---- */
+.page-section {
+  padding-block: var(--space-lg);
+}
+
+.page-section--soft {
+  background-color: var(--color-bg-light);
+}
+
+/* ==========================================================================
+   Sidebar promo cards (sit under .sidebar-nav on detail pages)
+   ========================================================================== */
+.sidebar-promo {
+  margin-top: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-white);
+  padding: 1rem 1.1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.sidebar-promo__body strong {
+  display: block;
+  font-size: 0.92rem;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-promo__body p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.sidebar-promo__body a {
+  font-weight: 700;
+}
+
+.sidebar-promo > .bi {
+  color: var(--color-purple);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Underline tabs (Presentaciones / Informes / years, etc.)
+   Built on Bootstrap .nav-tabs but restyled.
+   ========================================================================== */
+.gnfa-tabs.nav-tabs {
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: nowrap;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.gnfa-tabs.nav-tabs .nav-link {
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.25rem;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.gnfa-tabs.nav-tabs .nav-link:hover {
+  color: var(--color-purple);
+  border-bottom-color: var(--color-border);
+}
+
+.gnfa-tabs.nav-tabs .nav-link.active {
+  color: var(--color-purple);
+  background: transparent;
+  border-bottom-color: var(--color-purple);
+}
+
+/* ==========================================================================
+   Document list (rows: icon + title/desc + meta / external-link)
+   ========================================================================== */
+.doc-list {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+}
+
+.doc-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.doc-row:last-child {
+  border-bottom: none;
+}
+
+.doc-row__icon {
+  color: var(--color-navy);
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.doc-row__body {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.doc-row__body strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.doc-row__body span {
+  display: block;
+  font-size: 0.83rem;
+  color: var(--color-text-muted);
+  margin-top: 0.1rem;
+}
+
+.doc-row__meta {
+  flex-shrink: 0;
+  text-align: right;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+.doc-row__meta strong {
+  display: block;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.doc-row__link {
+  flex-shrink: 0;
+  color: var(--color-purple);
+  font-size: 1.2rem;
+}
+
+/* Bordered card variant (as used on the "Cifras" detail rows) */
+.doc-list--boxed .doc-row {
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+.doc-list--boxed .doc-row:last-child { margin-bottom: 0; }
+
+/* ==========================================================================
+   Accordion (glosario terms + FAQ questions)
+   Built on Bootstrap collapse markup, fully restyled.
+   ========================================================================== */
+.gnfa-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gnfa-accordion__item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.gnfa-accordion__header {
+  margin: 0;
+}
+
+.gnfa-accordion__button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: var(--color-bg-light);
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gnfa-accordion__button .bi {
+  transition: transform 0.2s ease;
+  color: var(--color-text-muted);
+}
+
+.gnfa-accordion__button[aria-expanded="true"] {
+  background: #ECECEC;
+}
+
+.gnfa-accordion__button[aria-expanded="true"] .bi {
+  transform: rotate(180deg);
+}
+
+.gnfa-accordion__body {
+  padding: 1rem 1.25rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-bg-light);
+}
+
+/* FAQ variant: cyan-highlighted active header */
+.gnfa-accordion--faq .gnfa-accordion__button {
+  background: var(--color-white);
+  border: 1px solid transparent;
+}
+.gnfa-accordion--faq .gnfa-accordion__button[aria-expanded="true"] {
+  background: var(--color-cyan-pale);
+  border-color: var(--color-cyan);
+  border-radius: 0.5rem;
+  color: var(--color-navy);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.gnfa-accordion--faq .gnfa-accordion__body {
+  background: var(--color-white);
+}
+
+/* ==========================================================================
+   Alphabet navigation (A–Z selector with prev/next arrows)
+   ========================================================================== */
+.alpha-nav {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.alpha-nav__letter {
+  flex: 1 1 0;
+  min-width: 44px;
+  border: none;
+  background: transparent;
+  padding: 0.9rem 0.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 3px solid transparent;
+}
+
+.alpha-nav__letter:hover {
+  color: var(--color-purple);
+}
+
+.alpha-nav__letter.is-active {
+  color: var(--color-purple);
+  border-bottom-color: var(--color-purple);
+}
+
+.alpha-nav__arrow {
+  flex: 0 0 auto;
+  width: 44px;
+  border: none;
+  background: var(--color-purple);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alpha-nav__arrow:hover { background: var(--color-purple-dark); }
+
+/* ==========================================================================
+   Link-list cards (Sitios de interés grid)
+   ========================================================================== */
+.link-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+
+.link-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.link-card p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  flex-grow: 1;
+  margin-bottom: var(--space-md);
+}
+
+.link-card__more {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-purple);
+}
+
+/* ==========================================================================
+   Communication channels card (Canales de comunicación)
+   ========================================================================== */
+.canales-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md) var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.canales-card__title {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.canales-card__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 var(--space-lg);
+}
+
+.canales-card__col { border-left: 1px solid var(--color-border); padding-left: var(--space-md); }
+.canales-card__col:first-child { border-left: none; padding-left: 0; }
+
+.canal {
+  padding-block: 0.5rem;
+}
+.canal--highlight { background: var(--color-bg-light); border-radius: 0.4rem; padding-inline: 0.5rem; }
+
+.canal strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.canal a {
+  font-size: 0.85rem;
+  word-break: break-word;
+}
+
+/* ==========================================================================
+   Detail content (rich text used on Trámites detail, etc.)
+   ========================================================================== */
+.detail-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.detail-content h3 {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  margin-block: var(--space-md) var(--space-xs);
+}
+
+.detail-content p {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .canales-card__cols {
+    grid-template-columns: 1fr;
+  }
+  .canales-card__col {
+    border-left: none;
+    padding-left: 0;
+  }
+  .doc-row {
+    flex-wrap: wrap;
+  }
+  .doc-row__meta {
+    border-left: none;
+    padding-left: 0;
+    text-align: left;
+    width: 100%;
+  }
+  .alpha-nav__letter {
+    min-width: 40px;
+  }
+}

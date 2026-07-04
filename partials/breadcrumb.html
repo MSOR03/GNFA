@@ -1,0 +1,14 @@
+<!--
+  Breadcrumb partial.
+  Argument: data-items = JSON array of trailing crumbs after "Inicio", e.g.
+    [{"label":"Recursos de apoyo","href":"#"},{"label":"Glosario","current":true}]
+  Maps to TYPO3 Partials/Breadcrumb.html.
+-->
+<nav class="breadcrumb-bar" aria-label="breadcrumb">
+  <div class="breadcrumb-bar__inner">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+      <li class="breadcrumb-item {{activeCls}}"{{aria}} data-repeat>{{content}}</li>
+    </ol>
+  </div>
+</nav>

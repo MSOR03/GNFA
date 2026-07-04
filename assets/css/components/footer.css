@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Site Footer — link columns + social bar + institutional bar
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-charcoal);
+  background-image:
+    linear-gradient(rgba(30, 30, 30, 0.90), rgba(30, 30, 30, 0.94)),
+    url("../../img/home/footer-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-white);
+}
+
+.site-footer__links {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-lg) 1rem var(--space-md);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
+}
+
+.site-footer__col h3 {
+  color: var(--color-olive-light);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: var(--space-sm);
+}
+
+.site-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.site-footer__col a {
+  color: var(--color-white);
+  font-size: 0.85rem;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+  padding-bottom: 1px;
+}
+.site-footer__col a:hover { color: var(--color-cyan); }
+
+.site-footer__meta {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-sm) 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.site-footer__meta a {
+  color: var(--color-white);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+}
+
+.site-footer__social {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-sm) 1rem var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-olive-light);
+}
+
+.site-footer__social-icons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.site-footer__social-icons a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+.site-footer__social-icons a:hover {
+  background-color: var(--color-cyan);
+  border-color: var(--color-cyan);
+  color: var(--color-charcoal);
+}
+
+/* ---- Institutional bar ---- */
+.site-footer__institutional {
+  background-color: var(--color-olive);
+  color: var(--color-white);
+}
+
+.site-footer__institutional-inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-md) 1rem;
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) 1.3fr 1.3fr 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.site-footer__gov-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+.site-footer__gov-logos img { height: 28px; width: auto; max-width: 100%; }
+
+.site-footer__institutional h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer__institutional p {
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.site-footer__institutional a {
+  color: var(--color-white);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991.98px) {
+  .site-footer__links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .site-footer__institutional-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-footer__links {
+    grid-template-columns: 1fr;
+  }
+  .site-footer__institutional-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .site-footer__gov-logos {
+    justify-content: center;
+  }
+  .site-footer__social {
+    flex-direction: column;
+  }
+}

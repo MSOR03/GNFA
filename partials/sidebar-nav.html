@@ -1,0 +1,13 @@
+<!--
+  Sidebar navigation partial (vertical tab list on detail pages).
+  Argument: data-items = JSON array, e.g.
+    [{"label":"¿Quiénes somos?","href":"/pages/quienes-somos.html","active":true},
+     {"label":"Misión y visión","href":"/pages/mision-vision.html"}]
+  "label" may contain HTML (e.g. a <br><small> subtitle).
+  Maps to TYPO3 Partials/SidebarNav.html.
+-->
+<ul class="sidebar-nav">
+  <li class="sidebar-nav__item {{activeCls}}" data-repeat>
+    <a class="sidebar-nav__link" href="{{href}}">{{label}}</a>
+  </li>
+</ul>

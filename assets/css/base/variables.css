@@ -1,0 +1,50 @@
+/*
+  Design tokens extracted from Figma (Gerencia Nacional Financiera y Administrativa - UNAL)
+  Keep these in sync with the Figma file. When migrating to TYPO3, these map 1:1
+  to the Sitepackage's Sass/CSS custom properties.
+*/
+:root {
+  /* ---- Brand colors ---- */
+  --color-purple: #5100B9;
+  --color-purple-dark: #2E0068;
+  --color-olive: #677D29;
+  --color-olive-light: #839551;
+  --color-olive-pale: #EDF2DE;   /* soft light-green tint for menu hover/active */
+  --color-navy: #003241;
+  --color-cyan-light: #C1F1FF;
+  --color-cyan: #90E6FF;
+  --color-cyan-pale: #E3F9FF;
+
+  /* ---- Neutrals ---- */
+  --color-topbar: #3D4041;
+  --color-charcoal: #262728;
+  --color-charcoal-dark: #1E1E1E;
+  --color-text: #2F3233;
+  --color-text-muted: #5A5F61;
+  --color-border: #E2E5E1;
+  --color-bg-light: #FAFAFA;
+  --color-white: #FFFFFF;
+
+  /* ---- Typography ---- */
+  --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fs-h1: 2rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* ---- Spacing ---- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  /* ---- Radii / shadows ---- */
+  --radius-card: 12px;
+  --radius-pill: 999px;
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  /* ---- Layout ---- */
+  --container-max: 1320px;
+}

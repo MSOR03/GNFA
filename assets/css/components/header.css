@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Site Header — brand seal + topbar + utility bar.
+   The main navigation lives in its own component: mega-menu.css
+   Component partial: TYPO3 Partials/Header.html
+   ========================================================================== */
+
+.site-header {
+  position: relative;
+  z-index: 100;
+}
+
+/* ---- Shared inner container; left padding leaves room for the seal ---- */
+.topbar__inner,
+.mainbar__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  padding-left: clamp(1rem, 12vw, 200px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ---- Brand seal, overlaps the stacked bars on desktop ---- */
+.site-header__brand {
+  display: block;
+  position: absolute;
+  left: clamp(0.5rem, 3vw, 2rem);
+  top: 6px;
+  width: 120px;
+  z-index: 150;   /* sit above the white nav bar (.mega) so the seal isn't clipped */
+}
+
+.site-header__brand img {
+  width: 100%;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---- 1. Top bar ---- */
+.topbar {
+  background-color: var(--color-topbar);
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+
+.topbar__inner { min-height: 34px; }
+
+.topbar__breadcrumb a { color: var(--color-white); opacity: 0.85; }
+.topbar__breadcrumb a:hover { opacity: 1; }
+.topbar__breadcrumb .sep { margin-inline: 0.5rem; opacity: 0.5; }
+
+.topbar__sedes { position: relative; }
+.topbar__sedes-toggle {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+/* ---- 2. Utility bar ---- */
+.mainbar { background-color: var(--color-olive); }
+
+.mainbar__inner {
+  min-height: 46px;
+  gap: var(--space-sm);
+}
+
+.mainbar__links {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.mainbar__links a {
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+.mainbar__links a:hover { color: var(--color-white); opacity: 0.85; }
+
+.mainbar__utility {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.mainbar__utility .dropdown-toggle,
+.mainbar__utility button {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.mainbar__utility .bi { font-size: 1rem; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* Tablet / small desktop: shrink the seal reservation */
+@media (max-width: 1199.98px) {
+  .topbar__inner,
+  .mainbar__inner {
+    padding-left: clamp(1rem, 10vw, 150px);
+  }
+}
+
+/* Mobile: seal becomes a normal centered element; bars wrap tidily */
+@media (max-width: 991.98px) {
+  .site-header__brand {
+    position: static;
+    width: 52px;
+    margin: 0.4rem auto 0;
+  }
+
+  .topbar__inner,
+  .mainbar__inner {
+    padding-left: 1rem;
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+    padding-block: 0.4rem;
+  }
+
+  .topbar { font-size: 0.72rem; }
+
+  .mainbar__links { order: 2; width: 100%; }
+  .mainbar__utility { margin-left: 0; width: 100%; justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .topbar__breadcrumb span:not(.sep) { display: none; }
+  .topbar__breadcrumb .sep { display: none; }
+}

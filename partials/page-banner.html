@@ -1,0 +1,21 @@
+<!--
+  Page banner partial (teal hero with icon + title + description + photo).
+  Arguments (data-* on the include element):
+    data-title, data-icon (bootstrap-icon class), data-desc,
+    data-image, data-alt, data-variant-cls (e.g. "page-banner--plain").
+  Maps to TYPO3 Partials/PageBanner.html with matching arguments.
+-->
+<section class="page-banner {{variantCls}}">
+  <div class="page-banner__inner">
+    <div class="page-banner__content">
+      <div class="page-banner__title">
+        <i class="bi {{icon}}"></i>
+        <h1>{{title}}</h1>
+      </div>
+      <p>{{desc}}</p>
+    </div>
+    <div class="page-banner__media" data-media>
+      <img src="{{image}}" alt="{{alt}}">
+    </div>
+  </div>
+</section>

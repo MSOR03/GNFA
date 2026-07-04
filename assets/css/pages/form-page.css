@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Form page — multi-step form (surveys, registrations, PQRS, etc.)
+   ========================================================================== */
+
+.form-page__body {
+  padding-block: var(--space-lg);
+}
+
+/* ---- Step progress indicator ---- */
+.form-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 700px;
+  margin: 0 auto var(--space-lg);
+}
+
+.form-steps__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  flex: 1;
+}
+
+.form-steps__dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-white);
+}
+
+.form-steps__step.is-active .form-steps__dot {
+  border-color: var(--color-navy);
+  background: var(--color-cyan-light);
+}
+
+.form-steps__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.form-steps__step.is-active .form-steps__label {
+  color: var(--color-text);
+}
+
+.form-steps__line {
+  flex: 1 1 auto;
+  height: 2px;
+  background: var(--color-border);
+  margin-top: 9px;
+}
+
+.form-steps__line.is-active {
+  background: var(--color-navy);
+}
+
+/* ---- Form card ---- */
+.form-card {
+  max-width: 900px;
+  margin-inline: auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: var(--space-lg);
+}
+
+.form-field {
+  padding-block: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.form-field:last-child {
+  border-bottom: none;
+}
+
+.form-field label.field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.form-field .form-control {
+  background: var(--color-bg-light);
+  border-color: var(--color-border);
+  border-radius: 0.4rem;
+}
+
+.form-field p.field-text {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.form-field .form-check {
+  margin-bottom: 0.6rem;
+}
+
+.form-field .form-check-input:checked {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+
+.form-actions {
+  max-width: 900px;
+  margin: var(--space-md) auto 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 575.98px) {
+  .form-steps {
+    align-items: flex-start;
+  }
+  .form-steps__label {
+    font-size: 0.72rem;
+  }
+}

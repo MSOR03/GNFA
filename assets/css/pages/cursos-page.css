@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Cursos, infografías y videos page
+   ========================================================================== */
+
+/* Breadcrumb sits on the cyan band here */
+.cursos-page .breadcrumb-bar {
+  background-color: var(--color-cyan-light);
+}
+
+/* ---- Cursos en línea (cyan band + white panel) ---- */
+.cursos-online {
+  background-color: var(--color-cyan-light);
+  padding-block: var(--space-lg);
+}
+
+.cursos-online__panel {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 3rem;
+}
+
+.cursos-online__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cursos-online__item strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.cursos-online__item span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.cursos-online__item .bi {
+  color: var(--color-purple);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ---- Contenido destacado (split feature) ---- */
+.featured-split {
+  background-color: var(--color-cyan);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+}
+
+.featured-split__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-lg) 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.featured-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-lg);
+}
+
+.featured-card__eyebrow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.featured-card__eyebrow .bi {
+  font-size: 1.6rem;
+  color: var(--color-purple);
+}
+
+.featured-card__eyebrow strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.featured-card__eyebrow span {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.featured-card p {
+  font-size: 0.88rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+/* Infografía card (image + text) */
+.infografia-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.infografia-card__text {
+  padding: var(--space-md);
+}
+
+.infografia-card__text .eyebrow {
+  color: var(--color-purple);
+  font-size: 1.3rem;
+}
+
+.infografia-card__text h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  margin-block: 0.5rem;
+}
+
+.infografia-card__date {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.infografia-card__text p {
+  font-size: 0.83rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.infografia-card__img {
+  background: var(--color-charcoal);
+}
+.infografia-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Últimos videos ---- */
+.videos-grid {
+  padding-block: var(--space-lg);
+}
+
+.video-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-card__thumb {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.video-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.video-card__body h3 {
+  font-size: 1rem;
+  flex-grow: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.video-card__more {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-purple);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991.98px) {
+  .cursos-online__panel,
+  .featured-split__inner {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 575.98px) {
+  .infografia-card {
+    grid-template-columns: 1fr;
+  }
+}

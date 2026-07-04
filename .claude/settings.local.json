@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.figma.com)",
+      "Bash(ls \"C:/Users/Sebastian Olarte/AppData/Local/ms-playwright/\" 2>/dev/null)",
+      "Read(//c/Users/Sebastian Olarte/AppData/Local/ms-playwright/**)",
+      "Bash(node -e \"const {chromium}=require\\('playwright'\\); console.log\\(chromium.executablePath\\(\\)\\);\")",
+      "Bash(node shot.js)",
+      "Bash(rm -f shot.js package.json package-lock.json)",
+      "Bash(rm -rf node_modules)",
+      "Bash(pkill -f \"http.server 8080\")",
+      "Bash(curl -s -o /dev/null -w \"index via http: %{http_code}\\\\n\" http://127.0.0.1:8000/index.html)",
+      "Bash(curl -s -o /dev/null -w \"css via http: %{http_code}\\\\n\" http://127.0.0.1:8000/assets/css/base/base.css)",
+      "Bash(taskkill //F //IM python.exe //FI \"WINDOWTITLE eq *\")",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //F //PID 2840)"
+    ]
+  }
+}

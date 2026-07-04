@@ -1,0 +1,160 @@
+<!--
+  Reusable site header partial.
+  Loaded on every page via <div data-include="/partials/header.html"></div>.
+  Maps 1:1 to a future TYPO3 Fluid partial: Partials/Header.html
+  All URLs are root-relative so this single file works from any page depth.
+-->
+<header class="site-header">
+
+  <a class="site-header__brand" href="/index.html" aria-label="Inicio - Universidad Nacional de Colombia">
+    <img src="/assets/img/logo/unal-seal.png" alt="Universidad Nacional de Colombia">
+  </a>
+
+  <!-- 1. Top bar -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <nav class="topbar__breadcrumb" aria-label="Ubicación institucional">
+        <a href="/index.html">Nacional</a><span class="sep">|</span><span>Gerencia Nacional Financiera y Administrativa</span>
+      </nav>
+      <div class="dropdown topbar__sedes">
+        <button class="topbar__sedes-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sedes</button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Bogotá</a></li>
+          <li><a class="dropdown-item" href="#">Medellín</a></li>
+          <li><a class="dropdown-item" href="#">Manizales</a></li>
+          <li><a class="dropdown-item" href="#">Palmira</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Utility bar -->
+  <div class="mainbar">
+    <div class="mainbar__inner">
+      <div class="mainbar__links">
+        <a href="#">Calendario académico</a>
+        <a href="#">Correo institucional</a>
+      </div>
+      <div class="mainbar__utility">
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill"></i> Comunidad UNAL</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Estudiantes</a></li>
+            <li><a class="dropdown-item" href="#">Docentes</a></li>
+            <li><a class="dropdown-item" href="#">Egresados</a></li>
+          </ul>
+        </div>
+        <button type="button" aria-label="Buscar"><i class="bi bi-search"></i></button>
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Portal Financiero</a></li>
+            <li><a class="dropdown-item" href="#">SIAD</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">ESP</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Español</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
+        </div>
+        <button type="button" aria-label="Accesibilidad"><i class="bi bi-universal-access-circle"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Main navigation (full-width mega-menu + mobile drawer) -->
+  <nav class="mega" aria-label="Menú principal">
+    <div class="mega__inner">
+      <button class="mega__toggle" type="button" aria-expanded="false" aria-controls="megaNav" aria-label="Abrir menú">
+        <span class="mega__toggle-bar"></span>
+        <span class="mega__toggle-label">Menú</span>
+      </button>
+
+      <ul class="mega__list" id="megaNav">
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Sobre nosotros <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Sobre nosotros</span>
+              <ul class="mega__panel-links">
+                <li><a href="/pages/quienes-somos.html">¿Quiénes somos?</a></li>
+                <li><a href="/pages/mision-vision.html">Misión y visión</a></li>
+                <li><a href="/pages/politica-objetivos.html">Política y objetivos</a></li>
+                <li><a href="#">Estructura</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Dependencias <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Dependencias</span>
+              <ul class="mega__panel-links">
+                <li><a href="/pages/tramites.html">Nuestros trámites</a></li>
+                <li><a href="/pages/cifras.html">Cifras financieras</a></li>
+                <li><a href="#">Gestión Administrativa</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Normativa <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Normativa</span>
+              <ul class="mega__panel-links">
+                <li><a href="#">Normativa interna</a></li>
+                <li><a href="#">Normativa externa</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Ayúdanos a mejorar <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Ayúdanos a mejorar</span>
+              <ul class="mega__panel-links">
+                <li><a href="#">PQRS</a></li>
+                <li><a href="/pages/encuesta.html">Encuesta de satisfacción</a></li>
+                <li><a href="/pages/contactenos.html">Contáctenos</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Recursos de apoyo <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Recursos de apoyo</span>
+              <ul class="mega__panel-links">
+                <li><a href="/pages/sitios-de-interes.html">Sitios de interés</a></li>
+                <li><a href="/pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                <li><a href="/pages/glosario.html">Glosario</a></li>
+                <li><a href="/pages/cursos-videos.html">Cursos, infografías y videos</a></li>
+                <li><a href="/pages/resultados-encuesta.html">Resultados de encuestas</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item">
+          <a class="mega__link" href="/pages/novedades.html">Novedades</a>
+        </li>
+        <li class="mega__item">
+          <a class="mega__link" href="/pages/contactenos.html">Contáctenos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Backdrop for the mobile menu drawer -->
+<div class="mega-backdrop" hidden></div>
