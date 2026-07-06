@@ -1,0 +1,50 @@
+# =============================================================================
+# GNFA Sitepackage — Page TSconfig
+# Registers a simple backend layout so editors get a single "Contenido
+# principal" column (colPos 0), matching lib.mainContent in setup.typoscript.
+# =============================================================================
+mod.web_layout.BackendLayouts {
+    gnfaDefault {
+        title = GNFA — Página estándar
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Contenido principal
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    gnfaHome {
+        title = GNFA — Página de inicio
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Contenido adicional
+                                colPos = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Default layout for pages (and subpages); the home page selects "gnfaHome".
+mod.web_layout.BackendLayout = gnfaDefault
+page.backend_layout = gnfaDefault

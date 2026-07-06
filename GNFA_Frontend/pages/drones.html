@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Operación de Drones en la UNAL | Gerencia Nacional Financiera y Administrativa</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Font (placeholder for UNAL brand typeface) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Base -->
+  <link rel="stylesheet" href="../assets/css/base/variables.css">
+  <link rel="stylesheet" href="../assets/css/base/base.css">
+  <!-- Components -->
+  <link rel="stylesheet" href="../assets/css/components/header.css">
+  <link rel="stylesheet" href="../assets/css/components/mega-menu.css">
+  <link rel="stylesheet" href="../assets/css/components/footer.css">
+  <link rel="stylesheet" href="../assets/css/components/page-banner.css">
+  <link rel="stylesheet" href="../assets/css/components/sidebar-nav.css">
+  <link rel="stylesheet" href="../assets/css/components/ui-components.css">
+  <!-- Page -->
+  <link rel="stylesheet" href="../assets/css/pages/drones-page.css">
+</head>
+<body class="drones-page">
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ==========================================================================
+       HEADER  (future Fluid partial: Header.html)
+       ========================================================================== -->
+  <header class="site-header">
+
+  <a class="site-header__brand" href="../index.html" aria-label="Inicio - Universidad Nacional de Colombia">
+    <img src="../assets/img/logo/unal-seal.png" alt="Universidad Nacional de Colombia">
+  </a>
+
+  <!-- 1. Top bar -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <nav class="topbar__breadcrumb" aria-label="Ubicación institucional">
+        <a href="../index.html">Nacional</a><span class="sep">|</span><span>Gerencia Nacional Financiera y Administrativa</span>
+      </nav>
+      <div class="dropdown topbar__sedes">
+        <button class="topbar__sedes-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sedes</button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Bogotá</a></li>
+          <li><a class="dropdown-item" href="#">Medellín</a></li>
+          <li><a class="dropdown-item" href="#">Manizales</a></li>
+          <li><a class="dropdown-item" href="#">Palmira</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Utility bar -->
+  <div class="mainbar">
+    <div class="mainbar__inner">
+      <div class="mainbar__links">
+        <a href="#">Calendario académico</a>
+        <a href="#">Correo institucional</a>
+      </div>
+      <div class="mainbar__utility">
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill"></i> Comunidad UNAL</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Estudiantes</a></li>
+            <li><a class="dropdown-item" href="#">Docentes</a></li>
+            <li><a class="dropdown-item" href="#">Egresados</a></li>
+          </ul>
+        </div>
+        <button type="button" aria-label="Buscar"><i class="bi bi-search"></i></button>
+        <div class="svc">
+          <button class="svc__toggle" type="button" aria-expanded="false" aria-controls="svcPanel">Servicios <i class="bi bi-chevron-down"></i></button>
+          <div class="svc__panel" id="svcPanel">
+            <div class="svc__panel-inner">
+
+              <div class="svc__group">
+                <span class="svc__group-label">Nivel Nacional</span>
+                <ul class="svc__links">
+                  <li><a class="svc__link" href="#"><i class="bi bi-diagram-3"></i><div><strong>Estructura</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-hammer"></i><div><strong>Régimen Legal</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-person-badge"></i><div><strong>Convocatorias</strong><span>Personal Académico y Administrativo</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-image"></i><div><strong>Identidad UNAL</strong><span>Imagen Institucional</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-mortarboard"></i><div><strong>Admisiones</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-card-checklist"></i><div><strong>Registro y Matrícula</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-globe2"></i><div><strong>SIA</strong><span>Portal de Servicios Académicos</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-book"></i><div><strong>Bibliotecas</strong></div></a></li>
+                </ul>
+              </div>
+
+              <div class="svc__group">
+                <span class="svc__group-label">Otros servicios</span>
+                <ul class="svc__links svc__links--otros">
+                  <li><a class="svc__link" href="../index.html#solicitudes"><i class="bi bi-window-desktop"></i><div><strong>Solicitudes en línea</strong><span>Portal Único de Solicitudes de la GNFA</span></div></a></li>
+                  <li><a class="svc__link" href="../pages/macroproceso.html"><i class="bi bi-clipboard-check"></i><div><strong>Macroprocesos</strong><span>Repositorio de procesos, documentos y procedimientos</span></div></a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">ESP</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Español</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
+        </div>
+        <button type="button" aria-label="Accesibilidad"><i class="bi bi-universal-access-circle"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Main navigation (full-width mega-menu + mobile drawer) -->
+  <nav class="mega" aria-label="Menú principal">
+    <div class="mega__inner">
+      <button class="mega__toggle" type="button" aria-expanded="false" aria-controls="megaNav" aria-label="Abrir menú">
+        <span class="mega__toggle-bar"></span>
+        <span class="mega__toggle-label">Menú</span>
+      </button>
+
+      <ul class="mega__list" id="megaNav">
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Sobre nosotros <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Sobre nosotros</span>
+              <ul class="mega__panel-links">
+                <li><a href="../pages/quienes-somos.html">¿Quiénes somos?</a></li>
+                <li><a href="../pages/mision-vision.html">Misión y visión</a></li>
+                <li><a href="../pages/politica-objetivos.html">Política y objetivos</a></li>
+                <li><a href="#">Estructura</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Dependencias <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Dependencias</span>
+              <ul class="mega__panel-links">
+                <li><a href="../pages/tramites.html">Nuestros trámites</a></li>
+                <li><a href="../pages/cifras.html">Cifras financieras</a></li>
+                <li><a href="#">Gestión Administrativa</a></li>
+                <li><a href="../pages/drones.html">Operación de Drones</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Normativa <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Normativa</span>
+              <ul class="mega__panel-links">
+                <li><a href="../pages/normativa-interna.html">Normativa interna</a></li>
+                <li><a href="../pages/normativa-externa.html">Normativa externa</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Ayúdanos a mejorar <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Ayúdanos a mejorar</span>
+              <ul class="mega__panel-links">
+                <li><a href="#">PQRS</a></li>
+                <li><a href="../pages/encuesta.html">Encuesta de satisfacción</a></li>
+                <li><a href="../pages/contactenos.html">Contáctenos</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Recursos de apoyo <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Recursos de apoyo</span>
+              <ul class="mega__panel-links">
+                <li><a href="../pages/sitios-de-interes.html">Sitios de interés</a></li>
+                <li><a href="../pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                <li><a href="../pages/glosario.html">Glosario</a></li>
+                <li><a href="../pages/cursos-videos.html">Cursos, infografías y videos</a></li>
+                <li><a href="../pages/resultados-encuesta.html">Resultados de encuestas</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item">
+          <a class="mega__link" href="../pages/novedades.html">Novedades</a>
+        </li>
+        <li class="mega__item">
+          <a class="mega__link" href="../pages/contactenos.html">Contáctenos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Backdrop for the mobile menu drawer -->
+<div class="mega-backdrop" hidden></div>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="drone-hero">
+      <div class="drone-hero__intro">
+        <div class="drone-hero__title">
+          <i class="bi bi-airplane-engines"></i>
+          <h1>Operación de Drones en la UNAL</h1>
+        </div>
+        <p>Bienvenido al portal de la GNFA, el espacio oficial para la regulación del uso de drones en la Universidad Nacional de Colombia (UNAL). Aquí encontrarás toda la información, requisitos y políticas necesarias para operar drones de manera segura y responsable dentro de la institución.</p>
+      </div>
+      <div class="drone-hero__brand">
+        <!-- Placeholder for the official "DRONES en la UNAL" logo (from Figma) -->
+        <div class="drone-logo">
+          <div class="drone-logo__word">DRONES</div>
+          <div class="drone-logo__sub"><em>en la</em> <b>UNAL</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-bar" aria-label="breadcrumb">
+      <div class="breadcrumb-bar__inner">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Operación de Drones en la UNAL</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Prestar y operar -->
+    <section class="section">
+      <div class="container-xl-custom">
+        <div class="drone-feature">
+          <div class="drone-feature__media">
+            <img src="../assets/img/home/curso-destacado.png" alt="Persona registrando documentación de drones">
+            <div class="drone-logo">
+              <div class="drone-logo__word">DRONES</div>
+              <div class="drone-logo__sub"><em>en la</em> <b>UNAL</b></div>
+            </div>
+          </div>
+          <div class="drone-feature__body">
+            <div class="section-heading">
+              <span class="section-heading__icon"><i class="bi bi-clipboard2-pulse"></i></span>
+              <div><h2>Prestar y Operar Drones (UAS) en la UNAL</h2></div>
+            </div>
+            <p>Gestiona el préstamo y operación de drones propiedad de la Universidad Nacional de Colombia, registrados en el SGF-QUIPU, cumpliendo la normativa de la Aeronáutica Civil Colombiana (UAEAC). <strong>Solo para actividades investigativas, académicas y administrativas.</strong></p>
+            <a href="#" class="btn-drone">Solicitar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manuales -->
+    <section class="section pt-0">
+      <div class="container-xl-custom">
+        <div class="drone-manuals">
+          <div class="drone-manuals__body">
+            <h2>Nuestros manuales y procedimientos</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempor nunc sapien, a tristique velit laoreet eget. Fusce ex nisi, lobortis in fringilla quis, viverra id lect...</p>
+            <div class="drone-manuals__actions">
+              <a href="#" class="btn-drone">Ver manuales</a>
+              <a href="#" class="btn-drone btn-drone--soft">Ver procedimientos</a>
+            </div>
+          </div>
+          <div class="drone-manuals__media">
+            <img src="../assets/img/home/hero-1.png" alt="Dron en vuelo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Boletín + video -->
+    <section class="section pt-0">
+      <div class="container-xl-custom">
+        <div class="drone-split">
+          <div class="drone-bulletin">
+            <div class="drone-bulletin__icon"><i class="bi bi-diagram-3-fill"></i></div>
+            <h3>Mantente al día</h3>
+            <p>con las noticias y proyectos más recientes. Comunica al público general y a la comunidad universitaria la información más relevante sobre el estado de la Investigación y la Extensión en la Univer...</p>
+            <a href="#" class="btn-drone">Ver todos los boletines <i class="bi bi-chevron-right"></i></a>
+          </div>
+          <div class="drone-video">
+            <div class="drone-video__card">
+              <div>
+                <div class="drone-video__icon"><i class="bi bi-calendar-event"></i></div>
+                <h3>¿Cómo funciona el servicio de préstamo de drones en la UNAL?</h3>
+                <div class="drone-video__date"><i class="bi bi-calendar3"></i> 12 de Enero de 2026</div>
+                <p>Conozca el estado de los derechos de propiedad intelectual en el país, y cómo puede acceder a los servicios de la Dirección Nacional de Propiedad Intelectual.</p>
+                <a href="#" class="btn-drone--ghost">Ver video</a>
+              </div>
+              <div class="drone-video__thumb">
+                <img src="../assets/img/home/cifras-comites.png" alt="Estudiantes en el campus">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Últimas circulares -->
+    <section class="section pt-0">
+      <div class="container-xl-custom">
+        <div class="section-heading">
+          <span class="section-heading__icon"><i class="bi bi-calendar-event"></i></span>
+          <h2 class="mb-0">Últimas circulares</h2>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-6 col-lg-3">
+            <div class="drone-circular">
+              <h3>Novedad documental en el proceso Gestión Administrativa de Bienes y Servicios - Adquisiciones</h3>
+              <div class="drone-circular__date"><i class="bi bi-calendar3"></i> 12 de Enero de 2026</div>
+              <p>Se actualizó de versión el siguiente formato: U.FT.12.011.054 Informe me...</p>
+              <a href="#" class="btn-drone--ghost">Leer más</a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="drone-circular">
+              <h3>Novedad documental en el proceso Gestión Administrativa de Bienes y Servicios - Adquisiciones</h3>
+              <div class="drone-circular__date"><i class="bi bi-calendar3"></i> 12 de Enero de 2026</div>
+              <p>Una tarjeta es un elemento visual que contiene información específica como...</p>
+              <a href="#" class="btn-drone--ghost">Leer más</a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="drone-circular">
+              <h3>Circular 23 de la Gerencia Nacional Financiera y Administrativa</h3>
+              <div class="drone-circular__date"><i class="bi bi-calendar3"></i> 12 de Enero de 2026</div>
+              <p>Se publicó la circular 023, Entidades Financieras Autorizadas para invertir Rec...</p>
+              <a href="#" class="btn-drone--ghost">Leer más</a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="drone-circular">
+              <h3>Novedad documental en el proceso Gestión Financiera</h3>
+              <div class="drone-circular__date"><i class="bi bi-calendar3"></i> 12 de Enero de 2026</div>
+              <p>Una tarjeta es un elemento visual que contiene información específica como...</p>
+              <a href="#" class="btn-drone--ghost">Leer más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER  (future Fluid partial: Footer.html)
+       ========================================================================== -->
+  <footer class="site-footer">
+  <div class="site-footer__links">
+    <div class="site-footer__col">
+      <h3>Atención al usuario</h3>
+      <ul>
+        <li><a href="#">Atención en línea</a></li>
+        <li><a href="../pages/contactenos.html">Contáctenos</a></li>
+        <li><a href="../pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+        <li><a href="#">Quejas y reclamos</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h3>Enlaces de interés</h3>
+      <ul>
+        <li><a href="../pages/encuesta.html">Encuesta</a></li>
+        <li><a href="#">Pago Virtual</a></li>
+        <li><a href="#">Estadísticas</a></li>
+        <li><a href="#">Ofertas de empleo</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h3>Control interno</h3>
+      <ul>
+        <li><a href="#">Calidad</a></li>
+        <li><a href="#">Control interno</a></li>
+        <li><a href="#">Talento humano</a></li>
+        <li><a href="#">Rendición de cuentas</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Contratación</a></li>
+        <li><a href="#">Régimen Legal</a></li>
+        <li><a href="#">Buzón de notificaciones</a></li>
+        <li><a href="#">Protección de datos personales</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h3>Entidades relacionadas</h3>
+      <ul>
+        <li><a href="#">Contaduría General de la Nación</a></li>
+        <li><a href="#">Gobierno en Línea</a></li>
+        <li><a href="#">Ministerio de Educación Nacional</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__meta">
+    <a href="#">Accesibilidad</a>
+    <a href="#">Directorio de redes sociales institucionales</a>
+    <a href="#">Directorio telefónico y electrónico</a>
+    <a href="#">Plataforma Web LUNA</a>
+    <a href="#">Agencia UNAL</a>
+    <a href="#">Orgullo UNAL</a>
+    <a href="#">#SomosUNAL</a>
+  </div>
+
+  <div class="site-footer__social">
+    <span>REDES SOCIALES OFICIALES</span>
+    <div class="site-footer__social-icons">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+    </div>
+  </div>
+
+  <div class="site-footer__institutional">
+    <div class="site-footer__institutional-inner">
+      <div class="site-footer__gov-logos">
+        <img src="../assets/img/logo/gov-co-logo.png" alt="GOV.CO">
+        <img src="../assets/img/logo/marca-colombia.png" alt="Marca Colombia">
+      </div>
+      <div>
+        <h4>Universidad Nacional de Colombia</h4>
+        <p>Conmutador General: (+57) 601 316 5000</p>
+        <p>Línea gratuita nacional: 01 8000 912 597</p>
+        <p>Ubicación: Carrera 45 N° 26-85</p>
+        <p>Edificio Uriel Gutiérrez, Bogotá D.C., Colombia</p>
+      </div>
+      <div>
+        <h4>Gerencia Nacional Financiera y Administrativa</h4>
+        <p>Teléfono: (601) 316 5000 Ext. 18180</p>
+        <p>Correo: <a href="mailto:gernalfa_nal@unal.edu.co">gernalfa_nal@unal.edu.co</a></p>
+        <p>Ubicación: Carrera 45 # 26-85 Edificio Uriel Gutierréz</p>
+        <p>Of. 453</p>
+      </div>
+      <div>
+        <h4>Información del sitio</h4>
+        <p><a href="#">© Copyright 2026</a></p>
+        <p><a href="#">Mapa del sitio</a> - <a href="#">Créditos</a></p>
+        <p>Algunos derechos reservados</p>
+        <p>Actualización: XX/XX/XX</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

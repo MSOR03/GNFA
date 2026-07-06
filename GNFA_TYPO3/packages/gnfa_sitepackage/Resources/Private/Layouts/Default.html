@@ -1,0 +1,18 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>
+    Default page layout — maps to the old static page shell.
+    Header/Footer are modular partials; the page body is injected via the
+    "Main" section of each template. Variables from dataProcessing
+    (e.g. {mainNavigation}) are available here and in the partials.
+</f:comment>
+
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+<f:render partial="Header" arguments="{navigation: mainNavigation}" />
+
+<main id="main-content">
+    <f:render section="Main" />
+</main>
+
+<f:render partial="Footer" arguments="{_all}" />
+</html>

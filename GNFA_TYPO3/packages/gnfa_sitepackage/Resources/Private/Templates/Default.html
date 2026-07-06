@@ -1,0 +1,12 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>
+    Default page template. The body simply renders the content of the main
+    column (colPos 0). Additional templates (Home, Landing, …) can reuse the
+    same Layout and override the "Main" section.
+</f:comment>
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <f:cObject typoscriptObjectPath="lib.mainContent" />
+</f:section>
+</html>

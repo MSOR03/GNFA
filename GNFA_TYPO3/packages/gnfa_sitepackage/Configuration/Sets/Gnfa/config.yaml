@@ -1,0 +1,6 @@
+name: gnfa/sitepackage
+label: 'GNFA Sitepackage'
+
+# Pull in Fluid Styled Content so tt_content elements render out of the box.
+dependencies:
+  - typo3/fluid-styled-content

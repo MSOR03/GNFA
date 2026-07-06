@@ -1,0 +1,17 @@
+base: 'http://gnfa.local/'
+websiteTitle: 'Gerencia Nacional Financiera y Administrativa'
+errorHandling: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: 0
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: us
+rootPageId: 1
+routes: {  }
+# Activate the GNFA sitepackage Site Set (TypoScript, templates, assets).
+dependencies:
+  - gnfa/sitepackage

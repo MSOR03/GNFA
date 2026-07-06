@@ -1,0 +1,26 @@
+{
+    "name": "gnfa/sitepackage",
+    "type": "typo3-cms-extension",
+    "description": "Sitepackage for the Gerencia Nacional Financiera y Administrativa (UNAL) website.",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "GNFA",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^13.4",
+        "typo3/cms-fluid-styled-content": "^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gnfa\\Sitepackage\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "gnfa_sitepackage"
+        }
+    }
+}

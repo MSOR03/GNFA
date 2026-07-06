@@ -1,0 +1,9 @@
+# =============================================================================
+# GNFA Sitepackage — constants
+# Template resolution paths (overridable per project / integrator).
+# =============================================================================
+plugin.gnfa.view {
+    templateRootPath = EXT:gnfa_sitepackage/Resources/Private/Templates/
+    partialRootPath = EXT:gnfa_sitepackage/Resources/Private/Partials/
+    layoutRootPath = EXT:gnfa_sitepackage/Resources/Private/Layouts/
+}

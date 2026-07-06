@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerencia Nacional Financiera y Administrativa | Universidad Nacional de Colombia</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Font (placeholder for UNAL brand typeface) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Base -->
+  <link rel="stylesheet" href="assets/css/base/variables.css">
+  <link rel="stylesheet" href="assets/css/base/base.css">
+  <!-- Components -->
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/mega-menu.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <!-- Page -->
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ==========================================================================
+       HEADER  (future Fluid partial: Header.html)
+       ========================================================================== -->
+  <header class="site-header">
+
+  <a class="site-header__brand" href="index.html" aria-label="Inicio - Universidad Nacional de Colombia">
+    <img src="assets/img/logo/unal-seal.png" alt="Universidad Nacional de Colombia">
+  </a>
+
+  <!-- 1. Top bar -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <nav class="topbar__breadcrumb" aria-label="Ubicación institucional">
+        <a href="index.html">Nacional</a><span class="sep">|</span><span>Gerencia Nacional Financiera y Administrativa</span>
+      </nav>
+      <div class="dropdown topbar__sedes">
+        <button class="topbar__sedes-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sedes</button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Bogotá</a></li>
+          <li><a class="dropdown-item" href="#">Medellín</a></li>
+          <li><a class="dropdown-item" href="#">Manizales</a></li>
+          <li><a class="dropdown-item" href="#">Palmira</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Utility bar -->
+  <div class="mainbar">
+    <div class="mainbar__inner">
+      <div class="mainbar__links">
+        <a href="#">Calendario académico</a>
+        <a href="#">Correo institucional</a>
+      </div>
+      <div class="mainbar__utility">
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill"></i> Comunidad UNAL</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Estudiantes</a></li>
+            <li><a class="dropdown-item" href="#">Docentes</a></li>
+            <li><a class="dropdown-item" href="#">Egresados</a></li>
+          </ul>
+        </div>
+        <button type="button" aria-label="Buscar"><i class="bi bi-search"></i></button>
+        <div class="svc">
+          <button class="svc__toggle" type="button" aria-expanded="false" aria-controls="svcPanel">Servicios <i class="bi bi-chevron-down"></i></button>
+          <div class="svc__panel" id="svcPanel">
+            <div class="svc__panel-inner">
+
+              <div class="svc__group">
+                <span class="svc__group-label">Nivel Nacional</span>
+                <ul class="svc__links">
+                  <li><a class="svc__link" href="#"><i class="bi bi-diagram-3"></i><div><strong>Estructura</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-hammer"></i><div><strong>Régimen Legal</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-person-badge"></i><div><strong>Convocatorias</strong><span>Personal Académico y Administrativo</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-image"></i><div><strong>Identidad UNAL</strong><span>Imagen Institucional</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-mortarboard"></i><div><strong>Admisiones</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-card-checklist"></i><div><strong>Registro y Matrícula</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-globe2"></i><div><strong>SIA</strong><span>Portal de Servicios Académicos</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-book"></i><div><strong>Bibliotecas</strong></div></a></li>
+                </ul>
+              </div>
+
+              <div class="svc__group">
+                <span class="svc__group-label">Otros servicios</span>
+                <ul class="svc__links svc__links--otros">
+                  <li><a class="svc__link" href="index.html#solicitudes"><i class="bi bi-window-desktop"></i><div><strong>Solicitudes en línea</strong><span>Portal Único de Solicitudes de la GNFA</span></div></a></li>
+                  <li><a class="svc__link" href="pages/macroproceso.html"><i class="bi bi-clipboard-check"></i><div><strong>Macroprocesos</strong><span>Repositorio de procesos, documentos y procedimientos</span></div></a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">ESP</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Español</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
+        </div>
+        <button type="button" aria-label="Accesibilidad"><i class="bi bi-universal-access-circle"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Main navigation (full-width mega-menu + mobile drawer) -->
+  <nav class="mega" aria-label="Menú principal">
+    <div class="mega__inner">
+      <button class="mega__toggle" type="button" aria-expanded="false" aria-controls="megaNav" aria-label="Abrir menú">
+        <span class="mega__toggle-bar"></span>
+        <span class="mega__toggle-label">Menú</span>
+      </button>
+
+      <ul class="mega__list" id="megaNav">
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Sobre nosotros <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Sobre nosotros</span>
+              <ul class="mega__panel-links">
+                <li><a href="pages/quienes-somos.html">¿Quiénes somos?</a></li>
+                <li><a href="pages/mision-vision.html">Misión y visión</a></li>
+                <li><a href="pages/politica-objetivos.html">Política y objetivos</a></li>
+                <li><a href="#">Estructura</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Dependencias <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Dependencias</span>
+              <ul class="mega__panel-links">
+                <li><a href="pages/tramites.html">Nuestros trámites</a></li>
+                <li><a href="pages/cifras.html">Cifras financieras</a></li>
+                <li><a href="#">Gestión Administrativa</a></li>
+                <li><a href="pages/drones.html">Operación de Drones</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Normativa <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Normativa</span>
+              <ul class="mega__panel-links">
+                <li><a href="pages/normativa-interna.html">Normativa interna</a></li>
+                <li><a href="pages/normativa-externa.html">Normativa externa</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Ayúdanos a mejorar <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Ayúdanos a mejorar</span>
+              <ul class="mega__panel-links">
+                <li><a href="#">PQRS</a></li>
+                <li><a href="pages/encuesta.html">Encuesta de satisfacción</a></li>
+                <li><a href="pages/contactenos.html">Contáctenos</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item has-panel">
+          <button class="mega__link" type="button" aria-expanded="false">Recursos de apoyo <i class="bi bi-chevron-down"></i></button>
+          <div class="mega__panel">
+            <div class="mega__panel-inner">
+              <span class="mega__panel-label">Recursos de apoyo</span>
+              <ul class="mega__panel-links">
+                <li><a href="pages/sitios-de-interes.html">Sitios de interés</a></li>
+                <li><a href="pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                <li><a href="pages/glosario.html">Glosario</a></li>
+                <li><a href="pages/cursos-videos.html">Cursos, infografías y videos</a></li>
+                <li><a href="pages/resultados-encuesta.html">Resultados de encuestas</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="mega__item">
+          <a class="mega__link" href="pages/novedades.html">Novedades</a>
+        </li>
+        <li class="mega__item">
+          <a class="mega__link" href="pages/contactenos.html">Contáctenos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Backdrop for the mobile menu drawer -->
+<div class="mega-backdrop" hidden></div>
+
+  <main id="main-content">
+
+    <!-- ==========================================================================
+         HERO SLIDER  (future Fluid partial: Home/Hero.html)
+         ========================================================================== -->
+    <section class="hero">
+      <div id="heroCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/home/hero-1.png" alt="Avión en pista, factura electrónica de tiquetes aéreos">
+            <div class="hero__caption">
+              <div class="hero__caption-inner">
+                <div class="hero__caption-content">
+                  <h1>¿Cómo generar la factura electrónica de tiquetes aéreos adquiridos con Avianca?</h1>
+                  <p>Descripción de video con un máximo de tres líneas de texto descriptivo, no debería dar opción de texto más extenso.</p>
+                  <a href="pages/novedades.html" class="btn-brand">Leer más <i class="bi bi-plus-lg"></i></a>
+                  <div class="hero__date"><i class="bi bi-calendar3"></i> 15 de octubre del 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/home/tramites-banner.png" alt="Documentos y trámites de la GNFA">
+            <div class="hero__caption">
+              <div class="hero__caption-inner">
+                <div class="hero__caption-content">
+                  <h1>Conoce nuestros trámites y servicios en línea</h1>
+                  <p>Consulta toda la información relacionada con los trámites de Gestión Financiera y Gestión Administrativa disponibles para la comunidad universitaria.</p>
+                  <a href="pages/novedades.html" class="btn-brand">Leer más <i class="bi bi-plus-lg"></i></a>
+                  <div class="hero__date"><i class="bi bi-calendar3"></i> 10 de octubre del 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/home/curso-destacado.png" alt="Curso o taller destacado de la GNFA">
+            <div class="hero__caption">
+              <div class="hero__caption-inner">
+                <div class="hero__caption-content">
+                  <h1>Inscríbete a nuestros cursos y talleres de formación</h1>
+                  <p>Fortalece tus competencias en gestión financiera y administrativa con la oferta de capacitación de la Gerencia Nacional.</p>
+                  <a href="pages/novedades.html" class="btn-brand">Leer más <i class="bi bi-plus-lg"></i></a>
+                  <div class="hero__date"><i class="bi bi-calendar3"></i> 5 de octubre del 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/home/cifras-comites.png" alt="Comités de la GNFA">
+            <div class="hero__caption">
+              <div class="hero__caption-inner">
+                <div class="hero__caption-content">
+                  <h1>Conoce la gestión de los comités de la GNFA</h1>
+                  <p>Revisa las actas, decisiones y avances de los comités que acompañan la gestión financiera y administrativa de la Universidad.</p>
+                  <a href="pages/quienes-somos.html" class="btn-brand">Leer más <i class="bi bi-plus-lg"></i></a>
+                  <div class="hero__date"><i class="bi bi-calendar3"></i> 1 de octubre del 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <div class="carousel-controls-inner">
+            <button type="button" class="slider-btn js-play-pause" aria-label="Pausar carrusel">
+              <i class="bi bi-pause-fill"></i>
+            </button>
+            <button type="button" class="slider-btn" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Anterior">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <div class="carousel-indicators-custom">
+              <button type="button" class="js-indicator active" data-slide-to="0" aria-label="Diapositiva 1"></button>
+              <button type="button" class="js-indicator" data-slide-to="1" aria-label="Diapositiva 2"></button>
+              <button type="button" class="js-indicator" data-slide-to="2" aria-label="Diapositiva 3"></button>
+              <button type="button" class="js-indicator" data-slide-to="3" aria-label="Diapositiva 4"></button>
+            </div>
+            <button type="button" class="slider-btn" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Siguiente">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEARCH BAR
+         ========================================================================== -->
+    <section class="home-search">
+      <div class="home-search__inner">
+        <span class="home-search__label">BUSCAR EN LA GNFA</span>
+        <div class="input-group">
+          <input type="search" class="form-control" placeholder="Buscar en la Gerencia Nacional Financiera y Administrativa">
+          <button class="btn-search" type="button" aria-label="Buscar"><i class="bi bi-search"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SOLICITUDES EN LINEA  (future Fluid partial: Home/SolicitudesPanel.html)
+         ========================================================================== -->
+    <section class="solicitudes section" id="solicitudes">
+      <div class="container-xl-custom">
+        <div class="section-heading">
+          <span class="section-heading__icon"><i class="bi bi-easel2"></i></span>
+          <div>
+            <h2>Solicitudes en línea</h2>
+            <p>En este espacio podrás encontrar toda la información relevante a los servicios en línea asociadas a los procesos de Gestión Financiera y Gestión Administrativa de la Universidad Nacional</p>
+          </div>
+        </div>
+
+        <div class="solicitudes__panel">
+          <ul class="solicitudes__list">
+            <li class="solicitudes__item">
+              <div>
+                <strong>Portal Financiero</strong>
+                <span>Acá podrás solicitar y revisar tus pagos, revisar el bono de terceros</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>SIAD - Firma de documentos electrónicos</strong>
+                <span>Solicitud de orden contractual y otros</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>Radicador de solicitud de pago de estudiantes</strong>
+                <span>Radica aquí pagos de vinculación estudiantil</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>SIAD - Radicación de solicitud para la adquisición de bienes y servicios</strong>
+                <span>Texto inferior</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>Certificado de Ingresos y Retenciones</strong>
+                <span>Aplica para contratistas y para estudiantes</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>GESPRO</strong>
+                <span>Aplica solo para nivel nacional</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>Paz y salvo de parafiscales</strong>
+                <span>Texto inferior</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>Solicitudes Nivel Nacional y Sede Tumaco</strong>
+                <span>Podrás solicitar resolución, cuentas por pagar, facturación, certificado de disponibilidad presupuestal, presupuestal, actas de liquidación</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>Creación y actualización de terceros</strong>
+                <span>Texto inferior</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>Certificaciones contractuales</strong>
+                <span>Aplica solo para nivel nacional</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>Registro Único Tributario (RUT)</strong>
+                <span>Solicita el RUT de la Universidad Nacional de Colombia</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+            <li class="solicitudes__item">
+              <div>
+                <strong>Certificado de Retenciones</strong>
+                <span>Solicita tu certificado de retenciones realizadas por la Universidad Nacional de Colombia</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CTA BANNER - Nuestros trámites
+         ========================================================================== -->
+    <section class="section pt-0">
+      <div class="container-xl-custom">
+        <div class="cta-banner">
+          <img class="cta-banner__bg" src="assets/img/home/tramites-banner.png" alt="">
+          <div class="cta-banner__content">
+            <h2>Nuestros trámites</h2>
+            <p>Accede a la información de los diferentes trámites y servicios a cargo de la Gerencia Nacional Financiera y Administrativa para la comunidad universitaria y público en general.</p>
+            <a href="pages/tramites.html" class="btn-brand">Ver más <i class="bi bi-plus-lg"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SPLIT PANEL - Macroprocesos / Iniciar sesión
+         ========================================================================== -->
+    <section class="section pt-0">
+      <div class="container-xl-custom">
+        <div class="split-panel">
+          <div class="split-panel__info">
+            <span class="eyebrow"><i class="bi bi-diagram-3"></i> Macroprocesos</span>
+            <h3>Ingresa al módulo documental</h3>
+            <p>En este espacio encontrarás las guías, documentos, procedimientos, instructivos, manuales y formatos de la Gerencia Nacional Financiera y Administrativa</p>
+          </div>
+          <div class="split-panel__login">
+            <h3>Iniciar sesión</h3>
+            <form>
+              <div class="mb-3">
+                <label for="loginUser" class="form-label">Usuario <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+                  <input type="text" class="form-control" id="loginUser" placeholder="Usuario">
+                  <span class="input-group-text bg-white">@unal.edu.co</span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="loginPass" class="form-label">Correo <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-white"><i class="bi bi-lock"></i></span>
+                  <input type="password" class="form-control" id="loginPass" placeholder="Contraseña">
+                  <span class="input-group-text bg-white"><i class="bi bi-eye-slash"></i></span>
+                </div>
+              </div>
+              <button type="submit" class="btn-brand">Iniciar sesión</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         GNFA EN CIFRAS
+         ========================================================================== -->
+    <section class="section pt-0">
+      <div class="container-xl-custom">
+        <div class="section-heading">
+          <span class="section-heading__icon"><i class="bi bi-bar-chart-steps"></i></span>
+          <div>
+            <h2>La GNFA en cifras</h2>
+            <p>Accede a la información de los diferentes trámites y servicios a cargo de la Gerencia Nacional Financiera y Administrativa para la comunidad universitaria y público en general.</p>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <a class="cifras-card" href="pages/cifras.html">
+              <img src="assets/img/home/cifras-financieras.png" alt="Cifras financieras">
+              <span>Cifras financieras</span>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="cifras-card" href="pages/cifras.html">
+              <img src="assets/img/home/cifras-comites.png" alt="Comités">
+              <span>Comités</span>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="cifras-card" href="pages/cifras.html">
+              <img src="assets/img/home/cifras-transparencia.png" alt="Transparencia">
+              <span>Transparencia</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CURSO O TALLER DESTACADO
+         ========================================================================== -->
+    <section class="section pt-0">
+      <div class="container-xl-custom">
+        <div class="curso-banner">
+          <div class="curso-banner__content">
+            <h2>Curso o taller destacado</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed lacus nisl. Maecenas et nunc id neque placerat maximus nec accumsan quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="pages/cursos-videos.html" class="btn-brand">Ver más <i class="bi bi-plus-lg"></i></a>
+          </div>
+          <img src="assets/img/home/curso-destacado.png" alt="Curso o taller destacado">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ULTIMAS NOVEDADES
+         ========================================================================== -->
+    <section class="novedades section">
+      <div class="container-xl-custom">
+        <div class="section-heading">
+          <span class="section-heading__icon"><i class="bi bi-calendar-event"></i></span>
+          <h2 class="mb-0">Últimas novedades</h2>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-sm-6 col-lg-3">
+            <div class="novedad-card">
+              <div class="novedad-card__date"><i class="bi bi-calendar3"></i> 12 de Enero del 2026</div>
+              <h3>Novedad documental en el proceso Gestión Administrativa de Bienes y Servicios - Adquisiciones</h3>
+              <p>Se actualizó de versión el siguiente formato: U.FT.12.011.054 Informe me...</p>
+              <a href="pages/novedades.html" class="leer-mas">Leer más</a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="novedad-card">
+              <div class="novedad-card__date"><i class="bi bi-calendar3"></i> 12 de Enero del 2026</div>
+              <h3>Novedad documental en el proceso Gestión Administrativa de Bienes y Servicios - Adquisiciones</h3>
+              <p>Una tarjeta es un elemento visual que contiene información específica como...</p>
+              <a href="pages/novedades.html" class="leer-mas">Leer más</a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="novedad-card">
+              <div class="novedad-card__date"><i class="bi bi-calendar3"></i> 12 de Enero del 2026</div>
+              <h3>Circular 23 de la Gerencia Nacional Financiera y Administrativa</h3>
+              <p>Se publicó la circular 023, Entidades Financieras Autorizadas para invertir Rec...</p>
+              <a href="pages/novedades.html" class="leer-mas">Leer más</a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="novedad-card">
+              <div class="novedad-card__date"><i class="bi bi-calendar3"></i> 12 de Enero del 2026</div>
+              <h3>Novedad documental en el proceso Gestión Financiera</h3>
+              <p>Una tarjeta es un elemento visual que contiene información específica como...</p>
+              <a href="pages/novedades.html" class="leer-mas">Leer más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="pages/novedades.html" class="btn-brand">Ver todo <i class="bi bi-chevron-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER  (future Fluid partial: Footer.html)
+       ========================================================================== -->
+  <footer class="site-footer">
+  <div class="site-footer__links">
+    <div class="site-footer__col">
+      <h3>Atención al usuario</h3>
+      <ul>
+        <li><a href="#">Atención en línea</a></li>
+        <li><a href="pages/contactenos.html">Contáctenos</a></li>
+        <li><a href="pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+        <li><a href="#">Quejas y reclamos</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h3>Enlaces de interés</h3>
+      <ul>
+        <li><a href="pages/encuesta.html">Encuesta</a></li>
+        <li><a href="#">Pago Virtual</a></li>
+        <li><a href="#">Estadísticas</a></li>
+        <li><a href="#">Ofertas de empleo</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h3>Control interno</h3>
+      <ul>
+        <li><a href="#">Calidad</a></li>
+        <li><a href="#">Control interno</a></li>
+        <li><a href="#">Talento humano</a></li>
+        <li><a href="#">Rendición de cuentas</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Contratación</a></li>
+        <li><a href="#">Régimen Legal</a></li>
+        <li><a href="#">Buzón de notificaciones</a></li>
+        <li><a href="#">Protección de datos personales</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h3>Entidades relacionadas</h3>
+      <ul>
+        <li><a href="#">Contaduría General de la Nación</a></li>
+        <li><a href="#">Gobierno en Línea</a></li>
+        <li><a href="#">Ministerio de Educación Nacional</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__meta">
+    <a href="#">Accesibilidad</a>
+    <a href="#">Directorio de redes sociales institucionales</a>
+    <a href="#">Directorio telefónico y electrónico</a>
+    <a href="#">Plataforma Web LUNA</a>
+    <a href="#">Agencia UNAL</a>
+    <a href="#">Orgullo UNAL</a>
+    <a href="#">#SomosUNAL</a>
+  </div>
+
+  <div class="site-footer__social">
+    <span>REDES SOCIALES OFICIALES</span>
+    <div class="site-footer__social-icons">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+    </div>
+  </div>
+
+  <div class="site-footer__institutional">
+    <div class="site-footer__institutional-inner">
+      <div class="site-footer__gov-logos">
+        <img src="assets/img/logo/gov-co-logo.png" alt="GOV.CO">
+        <img src="assets/img/logo/marca-colombia.png" alt="Marca Colombia">
+      </div>
+      <div>
+        <h4>Universidad Nacional de Colombia</h4>
+        <p>Conmutador General: (+57) 601 316 5000</p>
+        <p>Línea gratuita nacional: 01 8000 912 597</p>
+        <p>Ubicación: Carrera 45 N° 26-85</p>
+        <p>Edificio Uriel Gutiérrez, Bogotá D.C., Colombia</p>
+      </div>
+      <div>
+        <h4>Gerencia Nacional Financiera y Administrativa</h4>
+        <p>Teléfono: (601) 316 5000 Ext. 18180</p>
+        <p>Correo: <a href="mailto:gernalfa_nal@unal.edu.co">gernalfa_nal@unal.edu.co</a></p>
+        <p>Ubicación: Carrera 45 # 26-85 Edificio Uriel Gutierréz</p>
+        <p>Of. 453</p>
+      </div>
+      <div>
+        <h4>Información del sitio</h4>
+        <p><a href="#">© Copyright 2026</a></p>
+        <p><a href="#">Mapa del sitio</a> - <a href="#">Créditos</a></p>
+        <p>Algunos derechos reservados</p>
+        <p>Actualización: XX/XX/XX</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

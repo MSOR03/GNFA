@@ -1,0 +1,48 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>
+    Home page template. Selected when the page's backend layout is "gnfaHome".
+    Composed of modular section partials (Resources/Private/Partials/Home/*).
+    Demo lists (solicitudes, novedades) live here for now; they are the natural
+    seam to later replace with real records (Extbase repository / content records).
+</f:comment>
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+    <f:render partial="Home/Hero" />
+    <f:render partial="Home/SearchBar" />
+
+    <f:variable name="solicitudes" value="{
+        0:  {title: 'Portal Financiero', desc: 'Acá podrás solicitar y revisar tus pagos, revisar el bono de terceros'},
+        1:  {title: 'SIAD - Firma de documentos electrónicos', desc: 'Solicitud de orden contractual y otros'},
+        2:  {title: 'Radicador de solicitud de pago de estudiantes', desc: 'Radica aquí pagos de vinculación estudiantil'},
+        3:  {title: 'SIAD - Radicación de solicitud para la adquisición de bienes y servicios', desc: 'Texto inferior'},
+        4:  {title: 'Certificado de Ingresos y Retenciones', desc: 'Aplica para contratistas y para estudiantes'},
+        5:  {title: 'GESPRO', desc: 'Aplica solo para nivel nacional'},
+        6:  {title: 'Paz y salvo de parafiscales', desc: 'Texto inferior'},
+        7:  {title: 'Solicitudes Nivel Nacional y Sede Tumaco', desc: 'Resolución, cuentas por pagar, facturación, disponibilidad presupuestal y actas de liquidación'},
+        8:  {title: 'Creación y actualización de terceros', desc: 'Texto inferior'},
+        9:  {title: 'Certificaciones contractuales', desc: 'Aplica solo para nivel nacional'},
+        10: {title: 'Registro Único Tributario (RUT)', desc: 'Solicita el RUT de la Universidad Nacional de Colombia'},
+        11: {title: 'Certificado de Retenciones', desc: 'Solicita tu certificado de retenciones realizadas por la Universidad Nacional de Colombia'}
+    }" />
+    <f:render partial="Home/Solicitudes" arguments="{items: solicitudes}" />
+
+    <f:render partial="Home/CtaBanner" />
+    <f:render partial="Home/SplitPanel" />
+    <f:render partial="Home/Cifras" />
+    <f:render partial="Home/CursoDestacado" />
+
+    <f:variable name="novedades" value="{
+        0: {date: '12 de Enero del 2026', title: 'Novedad documental en el proceso Gestión Administrativa de Bienes y Servicios - Adquisiciones', excerpt: 'Se actualizó de versión el siguiente formato: U.FT.12.011.054 Informe me...'},
+        1: {date: '12 de Enero del 2026', title: 'Novedad documental en el proceso Gestión Administrativa de Bienes y Servicios - Adquisiciones', excerpt: 'Una tarjeta es un elemento visual que contiene información específica como...'},
+        2: {date: '12 de Enero del 2026', title: 'Circular 23 de la Gerencia Nacional Financiera y Administrativa', excerpt: 'Se publicó la circular 023, Entidades Financieras Autorizadas para invertir Rec...'},
+        3: {date: '12 de Enero del 2026', title: 'Novedad documental en el proceso Gestión Financiera', excerpt: 'Una tarjeta es un elemento visual que contiene información específica como...'}
+    }" />
+    <f:render partial="Home/Novedades" arguments="{items: novedades}" />
+
+    <f:comment>Any additional editor content placed in the main column.</f:comment>
+    <f:cObject typoscriptObjectPath="lib.mainContent" />
+
+</f:section>
+</html>

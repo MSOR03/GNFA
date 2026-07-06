@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Sidebar nav — vertical tab list used on content pages
+   (future Fluid partial: SidebarNav.html)
+   ========================================================================== */
+
+.sidebar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.sidebar-nav__item + .sidebar-nav__item {
+  border-top: 1px solid var(--color-border);
+}
+
+.sidebar-nav__link {
+  display: block;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-white);
+}
+
+.sidebar-nav__link:hover {
+  background: var(--color-bg-light);
+  color: var(--color-text);
+}
+
+.sidebar-nav__item.is-active .sidebar-nav__link {
+  background: var(--color-purple);
+  color: var(--color-white);
+}
+
+/* Optional second line inside a sidebar link */
+.sidebar-nav__link small {
+  display: block;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-top: 0.15rem;
+}
+.sidebar-nav__item.is-active .sidebar-nav__link small {
+  color: var(--color-white);
+  opacity: 0.85;
+}
+
+@media (max-width: 767.98px) {
+  .sidebar-nav {
+    margin-bottom: var(--space-md);
+  }
+}

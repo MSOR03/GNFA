@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Drones page — "Operación de Drones en la UNAL"
+   Standalone landing page (future Fluid template: Pages/Drones.html).
+   Uses its own blue/cyan accent on top of the shared design tokens.
+   ========================================================================== */
+
+.drones-page {
+  --drone-blue: #1b3aa0;
+  --drone-blue-dark: #132a76;
+  --drone-cyan-a: #7ad3ef;
+  --drone-cyan-b: #35a7d8;
+}
+
+/* ---- Local blue button ---- */
+.btn-drone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--drone-blue);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.7rem 1.6rem;
+  font-weight: 600;
+  font-size: var(--fs-small);
+  transition: background-color 0.2s ease;
+}
+.btn-drone:hover { background: var(--drone-blue-dark); color: var(--color-white); }
+
+.btn-drone--soft {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+.btn-drone--soft:hover { background: rgba(255, 255, 255, 0.22); }
+
+.btn-drone--ghost {
+  background: transparent;
+  color: var(--drone-blue);
+  padding-inline: 0;
+  font-weight: 700;
+}
+.btn-drone--ghost:hover { background: transparent; color: var(--drone-blue-dark); text-decoration: underline; }
+
+/* ==========================================================================
+   Hero banner — navy intro (left) + cyan brand panel (right)
+   ========================================================================== */
+.drone-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.drone-hero__intro {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: var(--space-lg) 1.5rem;
+  padding-left: clamp(1.5rem, 12vw, 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drone-hero__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-sm);
+}
+.drone-hero__title .bi { font-size: 1.6rem; }
+.drone-hero__title h1 { color: var(--color-white); font-size: var(--fs-h1); margin: 0; }
+
+.drone-hero__intro p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.92rem;
+  max-width: 52ch;
+  margin: 0;
+}
+
+.drone-hero__brand {
+  background: linear-gradient(135deg, var(--drone-cyan-a), var(--drone-cyan-b));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+/* Text placeholder for the official "DRONES en la UNAL" logo
+   (real artwork to be supplied from Figma). */
+.drone-logo {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 1.75rem 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  line-height: 1;
+}
+.drone-logo__word {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--drone-blue);
+}
+.drone-logo__sub {
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  margin-top: 0.35rem;
+}
+.drone-logo__sub em { font-style: normal; color: var(--color-text-muted); }
+.drone-logo__sub b { color: var(--color-olive); }
+
+/* ==========================================================================
+   "Prestar y Operar Drones" — soft card with image + content
+   ========================================================================== */
+.drone-feature {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) 1.2fr;
+  overflow: hidden;
+}
+
+.drone-feature__media { position: relative; min-height: 240px; }
+.drone-feature__media img { width: 100%; height: 100%; object-fit: cover; }
+.drone-feature__media .drone-logo {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+}
+.drone-feature__media .drone-logo__word { font-size: 1.4rem; }
+.drone-feature__media .drone-logo__sub { font-size: 0.7rem; }
+
+.drone-feature__body { padding: var(--space-lg); }
+.drone-feature__body .section-heading { margin-bottom: var(--space-sm); }
+.drone-feature__body p { color: var(--color-text-muted); font-size: 0.92rem; margin-bottom: var(--space-md); }
+.drone-feature__body strong { color: var(--color-text); }
+
+/* ==========================================================================
+   Dark manuals card
+   ========================================================================== */
+.drone-manuals {
+  position: relative;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+}
+.drone-manuals__body { padding: var(--space-lg); }
+.drone-manuals__body h2 { color: var(--color-white); font-size: var(--fs-h2); margin-bottom: var(--space-sm); }
+.drone-manuals__body p { color: rgba(255, 255, 255, 0.8); font-size: 0.92rem; margin-bottom: var(--space-md); max-width: 46ch; }
+.drone-manuals__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.drone-manuals__media { align-self: stretch; min-height: 200px; }
+.drone-manuals__media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ==========================================================================
+   Split row: Boletín destacado + destacado video card
+   ========================================================================== */
+.drone-split { display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--space-md); align-items: stretch; }
+
+.drone-bulletin {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+}
+.drone-bulletin__icon { color: var(--drone-blue); font-size: 1.6rem; margin-bottom: var(--space-sm); }
+.drone-bulletin h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.5rem; }
+.drone-bulletin p { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--space-md); }
+.drone-bulletin .btn-drone { margin-top: auto; align-self: flex-start; }
+
+.drone-video {
+  background: var(--drone-blue);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  display: flex;
+  align-items: stretch;
+}
+.drone-video__card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-md);
+  align-items: center;
+  width: 100%;
+}
+.drone-video__icon { color: var(--drone-blue); font-size: 1.4rem; }
+.drone-video__card h3 { font-size: 0.95rem; text-transform: uppercase; margin-block: 0.5rem; }
+.drone-video__date { font-size: 0.78rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.5rem; }
+.drone-video__card p { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem; }
+.drone-video__thumb { border-radius: 10px; overflow: hidden; }
+.drone-video__thumb img { width: 100%; height: 100%; object-fit: cover; min-height: 150px; }
+
+/* ==========================================================================
+   Circulares cards
+   ========================================================================== */
+.drone-circular {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-md);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.drone-circular h3 { font-size: 1.05rem; margin-bottom: var(--space-sm); }
+.drone-circular__date { font-size: 0.78rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.6rem; }
+.drone-circular p { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-sm); flex-grow: 1; }
+.drone-circular .btn-drone--ghost { align-self: flex-start; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .drone-hero,
+  .drone-feature,
+  .drone-manuals,
+  .drone-split,
+  .drone-video__card {
+    grid-template-columns: 1fr;
+  }
+  .drone-hero__intro { padding-left: 1.5rem; order: 2; }
+  .drone-manuals__media,
+  .drone-feature__media { min-height: 200px; }
+}

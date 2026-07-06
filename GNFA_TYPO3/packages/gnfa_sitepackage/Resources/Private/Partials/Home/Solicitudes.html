@@ -1,0 +1,28 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>Home "Solicitudes en línea" panel — migrated from index.html. Items are demo data.</f:comment>
+<section class="solicitudes section" id="solicitudes">
+  <div class="container-xl-custom">
+    <div class="section-heading">
+      <span class="section-heading__icon"><i class="bi bi-easel2"></i></span>
+      <div>
+        <h2>Solicitudes en línea</h2>
+        <p>En este espacio podrás encontrar toda la información relevante a los servicios en línea asociadas a los procesos de Gestión Financiera y Gestión Administrativa de la Universidad Nacional</p>
+      </div>
+    </div>
+
+    <div class="solicitudes__panel">
+      <ul class="solicitudes__list">
+        <f:for each="{items}" as="item">
+          <li class="solicitudes__item">
+            <div>
+              <strong>{item.title}</strong>
+              <span>{item.desc}</span>
+            </div>
+            <i class="bi bi-box-arrow-up-right"></i>
+          </li>
+        </f:for>
+      </ul>
+    </div>
+  </div>
+</section>
+</html>

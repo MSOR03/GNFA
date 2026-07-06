@@ -1,0 +1,107 @@
+# =============================================================================
+# GNFA Sitepackage — TypoScript setup
+# Defines the main PAGE object rendered through a Fluid template, wires the
+# migrated CSS/JS, and exposes the main navigation to Fluid via a data processor.
+# =============================================================================
+
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = EXT:gnfa_sitepackage/Resources/Public/Images/logo/unal-seal.png
+
+    # ---- Fluid template shell ----
+    # templateName is chosen from the page's backend layout:
+    #   pagets__gnfaHome -> Home.html   (all others) -> Default.html
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = TEXT
+        templateName {
+            cObject = CASE
+            cObject {
+                key.data = pagelayout
+                default = TEXT
+                default.value = Default
+                pagets__gnfaHome = TEXT
+                pagets__gnfaHome.value = Home
+            }
+        }
+
+        templateRootPaths {
+            10 = {$plugin.gnfa.view.templateRootPath}
+        }
+        partialRootPaths {
+            10 = {$plugin.gnfa.view.partialRootPath}
+        }
+        layoutRootPaths {
+            10 = {$plugin.gnfa.view.layoutRootPath}
+        }
+
+        # ---- Navigation exposed to Fluid ----
+        dataProcessing {
+            # Main navigation: top-level section pages (children of the site
+            # root) + one sub-level for the mega-menu panels.
+            10 = menu
+            10 {
+                as = mainNavigation
+                special = directory
+                special.value.data = leveluid:0
+                levels = 2
+                expandAll = 1
+                titleField = nav_title // title
+            }
+
+            # Breadcrumb (rootline) for inner pages.
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                as = breadcrumb
+                special = rootline
+                special.range = 1|-1
+                includeNotInMenu = 1
+            }
+        }
+    }
+
+    # ---- Third-party assets (CDN) ----
+    includeCSSLibs {
+        bootstrap = https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+        bootstrap.external = 1
+        bootstrapIcons = https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css
+        bootstrapIcons.external = 1
+        inter = https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap
+        inter.external = 1
+    }
+
+    # ---- Migrated GNFA stylesheets ----
+    includeCSS {
+        variables    = EXT:gnfa_sitepackage/Resources/Public/Css/base/variables.css
+        base         = EXT:gnfa_sitepackage/Resources/Public/Css/base/base.css
+        header       = EXT:gnfa_sitepackage/Resources/Public/Css/components/header.css
+        megaMenu     = EXT:gnfa_sitepackage/Resources/Public/Css/components/mega-menu.css
+        footer       = EXT:gnfa_sitepackage/Resources/Public/Css/components/footer.css
+        pageBanner   = EXT:gnfa_sitepackage/Resources/Public/Css/components/page-banner.css
+        sidebarNav   = EXT:gnfa_sitepackage/Resources/Public/Css/components/sidebar-nav.css
+        uiComponents = EXT:gnfa_sitepackage/Resources/Public/Css/components/ui-components.css
+        home         = EXT:gnfa_sitepackage/Resources/Public/Css/pages/home.css
+    }
+
+    # ---- JavaScript (footer) ----
+    includeJSFooterlibs {
+        bootstrap = https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+        bootstrap.external = 1
+    }
+    includeJSFooter {
+        main = EXT:gnfa_sitepackage/Resources/Public/JavaScript/main.js
+    }
+}
+
+# =============================================================================
+# Content column (colPos 0), rendered by the Fluid template via <f:cObject>.
+# =============================================================================
+lib.mainContent = CONTENT
+lib.mainContent {
+    table = tt_content
+    select {
+        orderBy = sorting
+        where = {#colPos}=0
+    }
+}

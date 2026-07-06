@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Macroprocesos module — "Macroprocesos de la GNFA"
+   A single page with several JS-toggled screens:
+     login → user (welcome / results) → admin (list / create)
+   (future TYPO3: an Extbase plugin; here it is a static prototype driven
+    by macroproceso.js switching [data-screen] visibility.)
+   ========================================================================== */
+
+.macro { --macro-teal: #0d6a86; --macro-teal-dark: #094f66; }
+
+/* Screens are shown/hidden by macroproceso.js via the [hidden] attribute. */
+.macro [hidden] { display: none !important; }
+
+/* ---- Local teal buttons (admin mode) ---- */
+.btn-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--macro-teal);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1.4rem;
+  font-weight: 600;
+  font-size: var(--fs-small);
+  transition: background-color 0.2s ease;
+}
+.btn-teal:hover { background: var(--macro-teal-dark); color: var(--color-white); }
+
+.btn-teal--outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+.btn-teal--outline:hover { background: var(--color-bg-light); color: var(--color-text); }
+
+/* ==========================================================================
+   Login banner (teal, title pill + photo)
+   ========================================================================== */
+.macro-banner {
+  background: var(--color-navy);
+  color: var(--color-white);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: stretch;
+}
+.macro-banner__body {
+  padding: var(--space-lg) 1.5rem;
+  padding-left: clamp(1.5rem, 12vw, 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.macro-banner__pill {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--color-cyan);
+  color: var(--color-navy);
+  font-size: var(--fs-h1);
+  font-weight: 800;
+  border-radius: 14px;
+  padding: 0.4rem 1rem;
+  margin-bottom: var(--space-sm);
+}
+.macro-banner__body p { color: rgba(255,255,255,0.85); font-size: 0.92rem; max-width: 48ch; margin: 0; }
+.macro-banner__media { min-height: 220px; }
+.macro-banner__media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ==========================================================================
+   Login card
+   ========================================================================== */
+.macro-login {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-lg);
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  background: var(--color-white);
+}
+.macro-login__media { align-self: stretch; min-height: 320px; }
+.macro-login__media img { width: 100%; height: 100%; object-fit: cover; }
+.macro-login__form { padding: var(--space-lg) var(--space-lg) var(--space-lg) 0; }
+.macro-login__head { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: var(--space-md); }
+.macro-login__head .bi { color: var(--color-purple); font-size: 1.6rem; }
+.macro-login__head h2 { font-size: 2rem; margin-bottom: 0.25rem; }
+.macro-login__head p { color: var(--color-text-muted); font-size: 0.9rem; margin: 0; }
+.macro-login__form .btn-brand { margin-left: auto; }
+.macro-login__actions { display: flex; justify-content: flex-end; margin-top: var(--space-sm); }
+
+/* ==========================================================================
+   App layout (user + admin) — sidebar cards
+   ========================================================================== */
+.macro-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.macro-account__greet { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+.macro-account__mode { font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-sm); }
+.macro-account__mode b { color: var(--color-text); }
+.macro-account__btns { display: flex; flex-direction: column; gap: 0.6rem; }
+.macro-account__btns .btn-brand,
+.macro-account__btns .btn-teal,
+.macro-account__btns .btn-teal--outline { width: 100%; }
+
+/* ---- Filter form (user) ---- */
+.macro-filter label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; display: block; }
+.macro-filter .form-control,
+.macro-filter .form-select { font-size: 0.9rem; margin-bottom: var(--space-sm); }
+.macro-filter .btn-brand { width: 100%; justify-content: center; }
+
+/* ---- Admin nav ---- */
+.macro-nav { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.macro-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.92rem;
+  background: var(--color-white);
+}
+.macro-nav__link .bi:first-child { color: var(--macro-teal); font-size: 1.1rem; }
+.macro-nav__link .macro-nav__arrow { margin-left: auto; color: var(--color-text-muted); }
+.macro-nav__link:hover { background: var(--color-bg-light); color: var(--color-text); }
+.macro-nav__item.is-active .macro-nav__link {
+  background: var(--macro-teal);
+  border-color: var(--macro-teal);
+  color: var(--color-white);
+}
+.macro-nav__item.is-active .macro-nav__link .bi { color: var(--color-white); }
+
+/* ==========================================================================
+   Main panels
+   ========================================================================== */
+.macro-panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg-light);
+  padding: var(--space-lg);
+}
+
+/* Welcome (user, empty state) */
+.macro-welcome__icon { color: var(--color-purple); font-size: 1.8rem; margin-bottom: var(--space-sm); }
+.macro-welcome h2 { font-size: 2.5rem; margin-bottom: 0.25rem; }
+.macro-welcome p { color: var(--color-text-muted); font-size: 1.1rem; margin: 0; }
+
+/* Admin section title (list / create) */
+.macro-title { font-size: 1.6rem; margin-bottom: 0.25rem; }
+.macro-subtitle { color: var(--color-text-muted); margin-bottom: var(--space-md); }
+
+/* Admin list */
+.macro-list__head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: var(--space-md); flex-wrap: wrap; }
+.macro-list__head h2 { font-size: 1.2rem; }
+.macro-list__head h2 span { color: var(--color-text-muted); font-weight: 400; }
+.macro-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+.macro-row__handle { color: var(--color-text-muted); cursor: grab; }
+.macro-row__name { flex-grow: 1; font-size: 0.95rem; }
+.macro-row__actions { display: flex; gap: 0.75rem; border-left: 1px solid var(--color-border); padding-left: 0.9rem; }
+.macro-row__actions button { background: none; border: none; color: var(--color-text-muted); font-size: 1rem; }
+.macro-row__actions button:hover { color: var(--macro-teal); }
+
+/* Admin create form */
+.macro-form label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; display: block; }
+.macro-form .req { color: #d13; }
+.macro-form .form-control { margin-bottom: var(--space-md); }
+.macro-form__actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.macro-form__back { display: inline-flex; align-items: center; gap: 0.4rem; background: none; border: none; color: var(--macro-teal); font-weight: 600; }
+.macro-form__back:hover { color: var(--macro-teal-dark); }
+
+/* Results tabs (built on shared .gnfa-tabs / .doc-list) */
+.macro-results .doc-list { margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .macro-banner,
+  .macro-login { grid-template-columns: 1fr; }
+  .macro-banner__body { padding-left: 1.5rem; }
+  .macro-banner__media { order: -1; }
+  .macro-login__form { padding: 0 var(--space-md) var(--space-md); }
+  .macro-login__actions { justify-content: stretch; }
+  .macro-login__form .btn-brand { width: 100%; justify-content: center; }
+}

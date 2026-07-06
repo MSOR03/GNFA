@@ -1,0 +1,132 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>
+    Site header — migrated from GNFA_Frontend/partials/header.html.
+    - Top bar + utility bar (with the Servicios mega panel) are static markup.
+    - The main navigation (.mega) is generated from the TYPO3 page tree via the
+      {navigation} array (menu dataProcessor, passed in from the Layout).
+    Asset URLs resolve through EXT:gnfa_sitepackage/Resources/Public.
+</f:comment>
+<header class="site-header">
+
+  <a class="site-header__brand" href="/" aria-label="Inicio - Universidad Nacional de Colombia">
+    <img src="{f:uri.resource(path: 'Images/logo/unal-seal.png', extensionName: 'GnfaSitepackage')}" alt="Universidad Nacional de Colombia">
+  </a>
+
+  <!-- 1. Top bar -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <nav class="topbar__breadcrumb" aria-label="Ubicación institucional">
+        <a href="/">Nacional</a><span class="sep">|</span><span>Gerencia Nacional Financiera y Administrativa</span>
+      </nav>
+      <div class="dropdown topbar__sedes">
+        <button class="topbar__sedes-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sedes</button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Bogotá</a></li>
+          <li><a class="dropdown-item" href="#">Medellín</a></li>
+          <li><a class="dropdown-item" href="#">Manizales</a></li>
+          <li><a class="dropdown-item" href="#">Palmira</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Utility bar -->
+  <div class="mainbar">
+    <div class="mainbar__inner">
+      <div class="mainbar__links">
+        <a href="#">Calendario académico</a>
+        <a href="#">Correo institucional</a>
+      </div>
+      <div class="mainbar__utility">
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill"></i> Comunidad UNAL</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Estudiantes</a></li>
+            <li><a class="dropdown-item" href="#">Docentes</a></li>
+            <li><a class="dropdown-item" href="#">Egresados</a></li>
+          </ul>
+        </div>
+        <button type="button" aria-label="Buscar"><i class="bi bi-search"></i></button>
+        <div class="svc">
+          <button class="svc__toggle" type="button" aria-expanded="false" aria-controls="svcPanel">Servicios <i class="bi bi-chevron-down"></i></button>
+          <div class="svc__panel" id="svcPanel">
+            <div class="svc__panel-inner">
+
+              <div class="svc__group">
+                <span class="svc__group-label">Nivel Nacional</span>
+                <ul class="svc__links">
+                  <li><a class="svc__link" href="#"><i class="bi bi-diagram-3"></i><div><strong>Estructura</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-hammer"></i><div><strong>Régimen Legal</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-person-badge"></i><div><strong>Convocatorias</strong><span>Personal Académico y Administrativo</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-image"></i><div><strong>Identidad UNAL</strong><span>Imagen Institucional</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-mortarboard"></i><div><strong>Admisiones</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-card-checklist"></i><div><strong>Registro y Matrícula</strong></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-globe2"></i><div><strong>SIA</strong><span>Portal de Servicios Académicos</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-book"></i><div><strong>Bibliotecas</strong></div></a></li>
+                </ul>
+              </div>
+
+              <div class="svc__group">
+                <span class="svc__group-label">Otros servicios</span>
+                <ul class="svc__links svc__links--otros">
+                  <li><a class="svc__link" href="#"><i class="bi bi-window-desktop"></i><div><strong>Solicitudes en línea</strong><span>Portal Único de Solicitudes de la GNFA</span></div></a></li>
+                  <li><a class="svc__link" href="#"><i class="bi bi-clipboard-check"></i><div><strong>Macroprocesos</strong><span>Repositorio de procesos, documentos y procedimientos</span></div></a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">ESP</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Español</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
+        </div>
+        <button type="button" aria-label="Accesibilidad"><i class="bi bi-universal-access-circle"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Main navigation (generated from the TYPO3 page tree) -->
+  <nav class="mega" aria-label="Menú principal">
+    <div class="mega__inner">
+      <button class="mega__toggle" type="button" aria-expanded="false" aria-controls="megaNav" aria-label="Abrir menú">
+        <span class="mega__toggle-bar"></span>
+        <span class="mega__toggle-label">Menú</span>
+      </button>
+
+      <ul class="mega__list" id="megaNav">
+        <f:for each="{navigation}" as="item">
+          <f:if condition="{item.children}">
+            <f:then>
+              <li class="mega__item has-panel{f:if(condition: item.active, then: ' is-current')}">
+                <button class="mega__link" type="button" aria-expanded="false">{item.title} <i class="bi bi-chevron-down"></i></button>
+                <div class="mega__panel">
+                  <div class="mega__panel-inner">
+                    <span class="mega__panel-label">{item.title}</span>
+                    <ul class="mega__panel-links">
+                      <f:for each="{item.children}" as="child">
+                        <li><a href="{child.link}">{child.title}</a></li>
+                      </f:for>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </f:then>
+            <f:else>
+              <li class="mega__item{f:if(condition: item.active, then: ' is-current')}">
+                <a class="mega__link" href="{item.link}">{item.title}</a>
+              </li>
+            </f:else>
+          </f:if>
+        </f:for>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Backdrop for the mobile menu drawer -->
+<div class="mega-backdrop" hidden></div>
+</html>

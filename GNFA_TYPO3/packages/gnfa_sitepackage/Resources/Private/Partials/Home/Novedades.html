@@ -1,0 +1,28 @@
+<html data-namespace-typo3-fluid="true">
+<f:comment>Home "Últimas novedades" — migrated from index.html. Cards are demo data ({items}).</f:comment>
+<section class="novedades section">
+  <div class="container-xl-custom">
+    <div class="section-heading">
+      <span class="section-heading__icon"><i class="bi bi-calendar-event"></i></span>
+      <h2 class="mb-0">Últimas novedades</h2>
+    </div>
+
+    <div class="row g-3">
+      <f:for each="{items}" as="item">
+        <div class="col-sm-6 col-lg-3">
+          <div class="novedad-card">
+            <div class="novedad-card__date"><i class="bi bi-calendar3"></i> {item.date}</div>
+            <h3>{item.title}</h3>
+            <p>{item.excerpt}</p>
+            <a href="#" class="leer-mas">Leer más</a>
+          </div>
+        </div>
+      </f:for>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="#" class="btn-brand">Ver todo <i class="bi bi-chevron-right"></i></a>
+    </div>
+  </div>
+</section>
+</html>
